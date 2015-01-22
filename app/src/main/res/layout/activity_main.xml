@@ -3,28 +3,42 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
     <TextView
         android:id="@+id/l_search_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:text="@string/l_search_field_text"
+        />
+
     <EditText
-        android:id="@+id/et_search_text"
+        android:id="@+id/et_search_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
+        android:hint="@string/et_search_field_text"
+        android:maxLines="1"
+        />
     <Button
         android:id="@+id/bt_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"/>
-
-    <ListView
-        android:id="@+id/lv_favs"
+        android:text="@string/bt_search_text"
+        android:layout_gravity="center_horizontal"
+        android:focusable="false"
+        android:onClick="bt_search_onclick"/>
+    <TextView
+        android:id="@+id/l_favs_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"/>
+        android:layout_marginTop="30dp"
+        android:text="@string/l_favs_list_text"/>
+
+    <ListView
+        android:id="@+id/lv_favs_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>
