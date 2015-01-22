@@ -1,5 +1,6 @@
 package com.rafael.simplebrowser;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    public final static String INTENTS_EXTRA_SEARCH_TEXT = "com.rafael.simplebrowser.intents.extra.SEARCH_TEXT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +51,12 @@ public class MainActivity extends ActionBarActivity {
             String searchText = ((EditText)findViewById(R.id.et_search_field)).getText().toString();
 
             Log.d("MAIN_ONCLICK","texto a buscar:'" + searchText + "'");
-            //2. Launch browser activity passing the text
 
+
+            //2. Launch browser activity passing the text
+            Intent intent = new Intent(this, BrowserActivity.class);
+            intent.putExtra(INTENTS_EXTRA_SEARCH_TEXT, searchText);
+            startActivity(intent);
         }
     }
 }

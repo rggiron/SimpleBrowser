@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SimpleBrowser</string>
+    <string name="app_name">Navegador Fácil</string>
     <string name="l_search_field_text">Introduzca una URL o el texto que desee buscar</string>
     <string name="et_search_field_text">URL o texto</string>
     <string name="bt_search_text">Buscar</string>
     <string name="l_favs_list_text">Lista de favoritos</string>
-    <string name="title_activity_browser">BrowserActivity</string>
+    <string name="title_activity_browser">Navegador Fácil</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
