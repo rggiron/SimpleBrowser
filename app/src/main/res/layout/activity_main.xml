@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/et_search_field_text"
         android:maxLines="1"
+
         />
     <Button
         android:id="@+id/bt_search"

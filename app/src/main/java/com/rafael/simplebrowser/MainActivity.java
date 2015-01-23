@@ -8,6 +8,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import com.rafael.simplebrowser.model.Favorite;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,6 +23,23 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FavsAdapter adapter = new FavsAdapter(this, getInitialFavs());
+
+        ListView listView = (ListView) findViewById(R.id.lv_favs_list);
+        listView.setAdapter(adapter);
+
+    }
+
+    private ArrayList<Favorite> getInitialFavs() {
+        ArrayList<Favorite> myfavs = new ArrayList<Favorite>();
+        myfavs.add(new Favorite(1,"Heraldo", "http://www.heraldo.es"));
+        myfavs.add(new Favorite(2,"El Pais", "http://www.elpais.com"));
+        myfavs.add(new Favorite(3,"El Mundo", "http://www.elmundo.es"));
+        myfavs.add(new Favorite(4,"El Confidencial", "http://www.elconfidencial.com"));
+        myfavs.add(new Favorite(1,"Marca", "http://www.marca.com"));
+
+        return myfavs;
     }
 
 
@@ -59,4 +81,6 @@ public class MainActivity extends ActionBarActivity {
             startActivity(intent);
         }
     }
+
+
 }

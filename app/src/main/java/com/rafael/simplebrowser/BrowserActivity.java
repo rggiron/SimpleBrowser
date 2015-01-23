@@ -1,16 +1,16 @@
 package com.rafael.simplebrowser;
 
 import android.app.Activity;
-import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import java.net.URL;
 
 
 public class BrowserActivity extends ActionBarActivity {
@@ -41,10 +41,6 @@ public class BrowserActivity extends ActionBarActivity {
         final Activity activity = this;
         browser.setWebViewClient(new WebViewClient(){
 
-//        public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//            view.loadUrl(url);
-//            return true;
-//        }
 
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
             Toast.makeText(activity, "Oh no! " + description, Toast.LENGTH_SHORT).show();
@@ -58,8 +54,9 @@ public class BrowserActivity extends ActionBarActivity {
 
     }
 
-    private String getFinalUrl(String url) {
-        return GOOGLE_SEARCH_URL + url;
+    private String getFinalUrl(String url)
+    {
+        return (url.startsWith("http://") || url.startsWith("https://")) ? url : GOOGLE_SEARCH_URL + url;
     }
 
     @Override
